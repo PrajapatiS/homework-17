@@ -1,0 +1,83 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+$border-style: 1px dotted black;
+
+body{
+    background-color: orange;
+}  
+.header1{
+    @include grid-row(12);
+   // border:$border-style
+}
+.h1{
+    @include grid-column(12);
+    border: $border-style;
+    margin: 0;
+    padding:15px;
+}
+.div1{
+    @include grid-row(12);
+    text-align: center;
+}
+.up1{
+     @include grid-row(3);
+     border:$border-style;
+     position: center;
+     margin:20px;
+     padding:10px;
+     width:15%;
+     background-color: gray;
+
+}
+.down1{
+    @include grid-row(3);
+     // @include grid-row(3);
+     border:$border-style;
+     //position: center;
+     margin: 20px;
+     padding: 10px;
+     width: 15%;
+     background-color: gray;
+}
+.div2{
+    @include grid-row(12);
+    
+}
+.left1{
+    @include grid-column(3);
+      
+     border:$border-style;
+     position: right;
+    
+     padding:10px;
+     width:15%;
+     background-color: gray;
+    }
+     .p1{
+         text-align: center;
+     }
+.right1{
+    @include grid-column(3);
+      //@include grid-row(3);
+     border:$border-style;
+     position: center;
+    
+     padding:10px;
+     width:15%;
+     background-color: gray;
+}
+.section2{
+    @include grid-row();
+    border:$border-style;
+}
+.div5{
+    @include grid-column(4);
+    border:$border-style;
+    padding: 10px;
+    background-color: white;
+    text-align: top;
+    height: 350px;
+}
