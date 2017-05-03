@@ -1505,10 +1505,7 @@ body {
   padding-right: 0.625rem;
   padding-left: 0.625rem;
   border: 1px dotted black;
-  padding: 10px;
-  background-color: white;
-  text-align: top;
-  height: 350px; }
+  background-color: white; }
   @media print, screen and (min-width: 40em) {
     .div5 {
       padding-right: 0.9375rem;

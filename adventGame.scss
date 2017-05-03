@@ -76,8 +76,8 @@ body{
 .div5{
     @include grid-column(4);
     border:$border-style;
-    padding: 10px;
+    //padding: 10px;
     background-color: white;
-    text-align: top;
-    height: 350px;
+   // vertical-align: top;
+   // height: 350px;
 }

@@ -1,12 +1,22 @@
-<!doctype.html>
+<!doctype html>
 <html>
 <head>
     <link rel="stylesheet" href="adventGame.css">
     <link rel="stylesheet" href="adventGame.scss">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="adventGame.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="x-mustache-template" id="adventGame-template">    
+     <div class="div5">
+            <p>{{Name}}</p>
+    </div> 
+     <div class="div5">
+            <p>({{x}},{{y}})</p>
+    </div> 
+     <div class="div5">
+            <p>{{Found}}</p>
+    </div>  
+    </script>
 </head>
 <body>
     <header class="header1">
@@ -21,8 +31,10 @@
        
        <div class="div1"> <button id="btndown1" class="down1">Down</button></div>
     </section>
-    <section class="section2">
-        <div id="p1" class="div5">
+    <main></main>
+       <!--<section class="section2">
+      
+     <div id="p1" class="div5">
             <p >Name</p>
         </div>
         <div id="p2" class="div5">
@@ -31,8 +43,6 @@
         <div id="p3" class="div5">
             <p >Found</p>
             </div> 
-    </section>
-  
-
+    </section> -->
 </body>
 </html>

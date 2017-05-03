@@ -10,9 +10,11 @@ function getAllGameItem() {
         for (let i = 0; i < itemResponse.length; i++) {
             
             listItems.push(itemResponse[i]);
-            showAllItems(itemResponse[i]);
+            //showAllItems(itemResponse[i]);
         }
+        
         console.log('helloworld');
+        showAllItems();
     });
     console.log(listItems); 
     gameItem.send();
@@ -28,7 +30,7 @@ window.addEventListener('load', function () {
     btnUp.addEventListener('click', function () {
         y++;
         axisShow(x, y);
-        compareItems(x,y);
+       compareItems(x,y);
     });
     let btnLeft = document.querySelector('#btnleft1');
     btnLeft.addEventListener('click', function () {
@@ -60,10 +62,8 @@ window.addEventListener('load', function () {
     function compareItems(x,y)
     {
         // delete all children
-        let dv = document.querySelectorAll('.div5');
-        for (let i = 0; i < dv.length; i++) {
-            dv[i].innerHTML='';
-        }
+        let dv = document.querySelector('main');
+        dv.innerHTML='';
 
         for(let i =0;i <listItems.length;i++)
         {
@@ -73,10 +73,11 @@ window.addEventListener('load', function () {
                     
                   listItems[i].found =true;
            }
-            showAllItems(listItems[i]);
+           
              console.log('list'+listItems);
+             //showAllItems();
         }
-
+        showAllItems();
     }
     let x = 0;
     let y = 0;
@@ -90,9 +91,54 @@ window.addEventListener('load', function () {
     console.log(items);*/
 });
 
-function showAllItems(item) {
+function showAllItems() {
 
-//let temp= document.querySelector('#adventGame-template').innerHTML;
+    let temp = document.querySelector('#adventGame-template').innerHTML;
+    let bool = false;
+    
+    let parent = document.querySelector('main');
+   for(let i = 0 ; i<listItems.length ; i++)
+    {
+      let container = document.createElement('section');
+      container.classList.add('section2');
+      container.innerHTML = Mustache.render(temp,{
+          Name:listItems[i].name,
+          x:listItems[i].x,
+          y:listItems[i].y,
+          Found:listItems[i].found
+      });
+
+      parent.appendChild(container); 
+    }
+   
+
+    //container.innerHTML = Mustache.render(temp,{Name:item.name,
+    //x:item.x,y:item.y, Found:item.found});
+
+    //pg.textContent = item.name;
+
+   /* dv.appendChild(pg);
+
+    let dv1 = document.querySelector('#p2');
+
+    let pg1 = document.createElement('p');
+    pg1.textContent = '(' + item.x + ',' + item.y + ')';
+   // dv1.
+
+    dv1.appendChild(pg1);
+
+    let div = document.querySelector('#p3');
+    let page = document.createElement('p');
+    page.textContent = item.found;*/
+
+    
+}
+
+
+/*function showAllItems(item) {
+
+let temp= document.querySelector('#adventGame-template').innerHTML;
+
     let bool = false;
     let dv = document.querySelector('.div5');
 
@@ -114,7 +160,7 @@ function showAllItems(item) {
     page.textContent = item.found;
 
     div.appendChild(page);
-}
+} */
 
 
 
